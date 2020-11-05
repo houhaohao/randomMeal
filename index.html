@@ -1,0 +1,93 @@
+<html style="font-size:13.333333vw">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="format-detection" content="telephone=yes" />
+<title>选饭</title>
+</head> 
+
+<style> 
+div,
+li,
+ul,
+p,
+span,
+body,
+html,
+a,
+dd,
+dt,
+img,
+textarea,
+input,
+section,
+select,
+option {
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    box-sizing: border-box;
+    font-family: 'Microsoft yahei', '-apple-system';
+}
+html,
+body {
+    background: #f8f9fb;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior:smooth;
+}
+ .root{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+ }
+ .button{
+    width: 2rem;
+    height: 0.72rem;
+    background:linear-gradient(135deg,#76c2ff, #4c7eff);
+    border: 1px solid #fff;
+    border-radius: 0.36rem;
+    color: #fff;
+    text-align: center;
+    line-height: 0.72rem;
+    font-size: 0.32rem;
+    margin:1rem;
+ }
+ #reulst{
+   width: 4rem;
+   height: 4rem;
+   border: 0.03rem solid #4c7eff;
+  border-radius: 0.12rem 0rem 0.12rem 0rem 0.12rem 0rem 0.12rem 0rem;
+  background: blanchedalmond;
+  font-size: 0.8rem;
+  text-align: center;
+  color:darkgreen;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ }
+</style> 
+
+<body> 
+  <div class="root">
+      <div class="button" id="button">start</div>
+      <div id="reulst">
+        
+      </div>
+  </div>
+</body> 
+<script>
+  let reulst = document.getElementById('reulst');
+  let button = document.getElementById('button');
+  button.addEventListener('click', function(e) {  
+    var arr = ["寿司","盖饭","面条", "饿着",'披萨','煎饼','饺子','砂锅' ];
+    let num=10
+   let interval= setInterval(function(){
+      num--
+      reulst.innerHTML=arr[Math.floor((Math.random()*arr.length))];//重新设置test内的html代码。
+      if(num<=0){
+        window.clearInterval(interval)
+      }
+    },100)
+  })
+</script>
+</html>
